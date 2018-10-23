@@ -2,8 +2,10 @@
     <head>
         <title>Ethereum Wallet</title>
         <link rel="stylesheet" type="text/css" href="./style.css">
+        <script type="text/javascript" src="../ethers.min.js"></script>
     </head>
     <body>
+        <script>console.log(ethers)</script>
         <div class="centerer" id="screen-select">
             <div class="centered">
                 <h1>Ethereum Wallet Tool</h1>
@@ -387,7 +389,7 @@
                     var network = el.getAttribute('data-network');
                     el.onclick = function() {
                         addActivity('! Switched network: ' + network);
-                        activeWallet = activeWallet.connect(ethers.providers.getDefaultProvider(network));
+                        activeWallet = activeWallet.connect(ethers.getDefaultProvider(network));
                         query('.network.option.selected').forEach(function(el) {
                             el.classList.remove('selected');
                         });
@@ -450,7 +452,7 @@
 
             function showWallet(wallet) {
                 var network = document.querySelector('.network.option.selected').getAttribute('data-network');
-                activeWallet = wallet.connect(new ethers.providers.getDefaultProvider(network));
+                activeWallet = wallet.connect(new ethers.getDefaultProvider(network));
 
                 document.getElementById('screen-select').style.display = 'none';
                 document.getElementById('screen-loading').style.display = 'none';
