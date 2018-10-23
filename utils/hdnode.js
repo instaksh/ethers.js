@@ -144,9 +144,11 @@ function _fromSeed(seed, mnemonic) {
     var I = bytes_1.arrayify(hmac_1.computeHmac(hmac_1.SupportedAlgorithms.sha512, MasterSecret, seedArray));
     return new HDNode(_constructorGuard, I.slice(0, 32), I.slice(32), 0, 0, mnemonic, 'm');
 }
-function fromMnemonic(mnemonic, wordlist) {
+function fromMnemonic(mnemonic, wordlist, skipEntropyCheck) {
     // Check that the checksum s valid (will throw an error)
-    mnemonicToEntropy(mnemonic, wordlist);
+    if (!skipEntropyCheck) {
+        mnemonicToEntropy(mnemonic, wordlist);
+    }
     return _fromSeed(mnemonicToSeed(mnemonic), mnemonic);
 }
 exports.fromMnemonic = fromMnemonic;

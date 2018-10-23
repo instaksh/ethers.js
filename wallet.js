@@ -166,11 +166,11 @@ var Wallet = /** @class */ (function (_super) {
         }
         return Promise.reject('invalid wallet JSON');
     };
-    Wallet.fromMnemonic = function (mnemonic, path, wordlist) {
+    Wallet.fromMnemonic = function (mnemonic, path, wordlist, skipEntropyCheck) {
         if (!path) {
             path = hdnode_1.defaultPath;
         }
-        return new Wallet(hdnode_1.fromMnemonic(mnemonic, wordlist).derivePath(path));
+        return new Wallet(hdnode_1.fromMnemonic(mnemonic, wordlist, skipEntropyCheck).derivePath(path));
     };
     return Wallet;
 }(abstract_signer_1.Signer));
