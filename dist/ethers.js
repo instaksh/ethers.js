@@ -11481,16 +11481,16 @@ var InfuraProvider = /** @class */ (function (_super) {
         var host = null;
         switch (network.name) {
             case 'homestead':
-                host = 'mainnet.infura.io';
+                host = 'api.pungo.cloud/infura';
                 break;
             case 'ropsten':
-                host = 'ropsten.infura.io';
+                host = 'ropsten.infura.io/v3/a3ed7563e19c456e876d9c6c95d49648';
                 break;
             case 'rinkeby':
-                host = 'rinkeby.infura.io';
+                host = 'rinkeby.infura.io/v3/a3ed7563e19c456e876d9c6c95d49648';
                 break;
             case 'kovan':
-                host = 'kovan.infura.io';
+                host = 'kovan.infura.io/v3/a3ed7563e19c456e876d9c6c95d49648';
                 break;
             default:
                 throw new Error('unsupported network');
