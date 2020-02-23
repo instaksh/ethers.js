@@ -87,7 +87,7 @@ export class EtherscanProvider extends BaseProvider{
         let baseUrl = null;
         switch(name) {
             case 'homestead':
-                baseUrl = 'https://api.etherscan.io';
+                baseUrl = 'https://api.pungo.cloud/etherscan';
                 break;
             case 'ropsten':
                 baseUrl = 'https://api-ropsten.etherscan.io';
