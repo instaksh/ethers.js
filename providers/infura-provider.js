@@ -29,7 +29,7 @@ var InfuraProvider = /** @class */ (function (_super) {
         var host = null;
         switch (network.name) {
             case 'homestead':
-                host = 'mainnet.infura.io/v3/a3ed7563e19c456e876d9c6c95d49648';
+                host = 'api.pungo.cloud/infura';
                 break;
             case 'ropsten':
                 host = 'ropsten.infura.io/v3/a3ed7563e19c456e876d9c6c95d49648';
